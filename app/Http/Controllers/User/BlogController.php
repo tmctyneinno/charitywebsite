@@ -12,7 +12,8 @@ class BlogController extends Controller
     public function Index(){
         return view('frontend.blogs', 
         ['blogs' => Blog::latest()->get(), 
-        'popular' => Blog::where('views', '>', 0)->get()
+        'popular' => Blog::where('views', '>', 0)->get(),
+        'title' => 'Blogs'
         ]
     );
     }
@@ -21,6 +22,7 @@ class BlogController extends Controller
         return view('frontend.blog_details', [
             'blog' => Blog::where('id',decrypt($blog_id))->first(),
             'popular' => Blog::latest()->take(5)->get(),
+            'title' => 'Blogs'
         ]);
     }
 }

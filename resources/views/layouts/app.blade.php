@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title> {{$settings->site_name}}</title>
+    <title> {{isset($title)?$title: $settings->site_name}} </title>
     <link rel="shortcut icon" href="{{asset('/assets/fav.png')}}" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700" rel="stylesheet"/>
 

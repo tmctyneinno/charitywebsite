@@ -15,7 +15,8 @@ class ContactController extends Controller
     //
 
     public function Index(){
-        return view('frontend.contact');
+        return view('frontend.contact')
+        ->with('title', 'Contat Us');
     }
 
     public function Store(Request $request){
