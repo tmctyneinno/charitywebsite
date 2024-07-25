@@ -34,7 +34,7 @@ class ContactUs extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address('noreply@ncicworld.com', ' Ncicworld'),
+            from: new Address('info@elb-foundation.org', ' ELB Foundation'),
             subject: 'Contact Form submitted',
         );
     }
