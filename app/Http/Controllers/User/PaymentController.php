@@ -81,7 +81,7 @@ class PaymentController extends Controller
     public function handleCallback(Request $request)
     {
         $response_data = Paystack::getPaymentData();
-          dd($response_data);
+          dd( $request->trxref);
 
         if ($response_data['status'] != true){
             Session::flash('alert', 'success');
