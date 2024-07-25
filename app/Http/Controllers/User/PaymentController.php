@@ -81,7 +81,6 @@ class PaymentController extends Controller
     public function handleCallback(Request $request)
     {
         $response_data = Paystack::getPaymentData();
-          dd( $request->trxref);
 
         if ($response_data['status'] != true){
             Session::flash('alert', 'success');
@@ -103,7 +102,7 @@ class PaymentController extends Controller
             $user = User::where('email', $response_data['data']['customer']['email'])->first();
             if($user){
                 $transaction = Donation::where(['ref' => $response_data['data']['reference'], 'user_id' => $user->id])->first();
-                $transaction->update(['status'=> 'success', 'trans_id' => $request->trxref]);
+                $transaction->update(['status'=> 'success', 'trans_id' => $response_data['data']['reference']]);
                 $donation_category = DonationCategory::where('id',  $transaction->donation_category_id)->first();
                 $donation_category->update([
                     'total_donors' => $donation_category->total_donors + 1,
