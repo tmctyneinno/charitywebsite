@@ -93,7 +93,7 @@ class PaymentController extends Controller
          $check = Donation::where('trans_id',  $request->trxref)->first();
          if($check)
          {
-            Session::flash('alert', 'success');
+            Session::flash('alert', 'error');
             session()->flash('message', ' Transaction already completed.');
             return back();
          }

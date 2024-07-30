@@ -5,10 +5,10 @@
             <div class="d-table-cell">
                 <div class="container">
                     <div class="title-item">
-                        <h2>Donation Details</h2>
+                        <h4 style="color:#fff">{{$donation->title}}</h4>
                         <ul>
                             <li>
-                                <a href="index-2.html">Home</a>
+                                <a href="">Home</a>
                             </li>
                             <li>
                                 <span>Donation Details</span>
@@ -30,39 +30,6 @@
                             <img src="{{asset('images/'.$donation->image)}}" alt="Details" width="300px">
                             <p>{!! $donation->content !!}</p>
              
-                        </div>
-                        <div class="details-share">
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-6">
-                                    <div class="left">
-                                        <ul>
-                                            <li>
-                                                <span>Share:</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" target="_blank">
-                                                    <i class="icofont-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" target="_blank">
-                                                    <i class="icofont-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" target="_blank">
-                                                    <i class="icofont-youtube-play"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" target="_blank">
-                                                    <i class="icofont-instagram"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="details-payment">
                             <h4>Proceed to  Payment</h4>
